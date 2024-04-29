@@ -1,7 +1,6 @@
 
 
 <form   (ngSubmit)="onSubmit()"[formGroup]="form">
-
   <div class="calendarDaysManual">
     <div>
       <app-input formControlName="calendarDays"
@@ -37,8 +36,9 @@
     [placeholder]="'თანხა'"
     ></app-input>
    </div>
-</form>
-
-<div class="declree-calc-cont">
+   <div class="declree-calc-cont">
     <app-table [displayedColumns]="displayedColumns"></app-table>
 </div>
+</form>
+
+

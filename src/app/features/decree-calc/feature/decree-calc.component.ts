@@ -132,12 +132,12 @@ export class DecreeCalcComponent implements OnInit {
         sequence: 1
       },
       {
-        title: 'სამუშაო დღეები თვეში სულ',
+        title: 'სამუშაო დღეების რაოდ',
         getData: this.ui().workingDaysInMonth,
         sequence: 3
       },
       {
-        title: 'სამ.დღეების რაოდ. თვეში',
+        title: 'გაცდენილი დღეების რაოდ.',
         getData: this.ui().workingDays,
         sequence: 2
       },
