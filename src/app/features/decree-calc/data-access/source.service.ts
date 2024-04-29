@@ -10,7 +10,7 @@ export class SourceService {
   readonly dataVal = computed(this.#source)
 
 
-  data = signal(
+ private data = signal(
     {
       month: [],
       avarageSalary: [0],
@@ -21,19 +21,15 @@ export class SourceService {
       totalworkingDays: [0],
     }
   )
-  getData() {
+ public getData() {
     this.#source.update(this.data)
     return this.dataVal
   }
 
-  updateData(params: any, key: string) {
+ public updateData(params: any[], key: string) {
     this.#source.update((x) => {
       const { param, ...rest } = x;
       return { ...rest, [key]: params };
     });
-    console.log(this.#source())
   }
-
-
-
 }

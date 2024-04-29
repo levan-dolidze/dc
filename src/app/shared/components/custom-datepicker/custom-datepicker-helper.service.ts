@@ -76,7 +76,7 @@ export class CustomDatepickerHelperService {
     },
   ]
 
-  getWorkingDays(startDate: Date, endDate: Date, workingDaysInMonth?: Date): WorkingDays {
+  public getWorkingDays(startDate: Date, endDate: Date, workingDaysInMonth?: Date): WorkingDays {
     let totalDays = 0;
     let workingDays = [];
     let currentMonth = null;
@@ -111,7 +111,7 @@ export class CustomDatepickerHelperService {
     return { totalDays, workingDays };
   };
 
-  getMonthNames(startDate: Date, endDate: Date): string[] {
+  public getMonthNames(startDate: Date, endDate: Date): string[] {
     const monthNames: string[] = [];
     let currentDate = new Date(startDate);
     const endDatePlusOneMonth = new Date(endDate);
@@ -126,17 +126,17 @@ export class CustomDatepickerHelperService {
     return monthNames;
   }
 
-  getFirstDayOfMonth(date: Date) {
+  public getFirstDayOfMonth(date: Date) {
     let day = new Date(date)
     return new Date(day.getFullYear(), day.getMonth(), 1);
   }
-  getLastDayOfMonth(date: Date) {
+  public getLastDayOfMonth(date: Date) {
     let day = new Date(date);
     return new Date(day.getFullYear(), day.getMonth() + 1, 0);
   }
 
 
-  getAverageAmount(totalAmount: number, workingDaysInMonth: number[]) {
+  public getAverageAmount(totalAmount: number, workingDaysInMonth: number[]) {
     let arr = []
     for (let index = 0; index < workingDaysInMonth.length; index++) {
       let val = totalAmount / workingDaysInMonth[index]
@@ -144,7 +144,7 @@ export class CustomDatepickerHelperService {
     }
     return arr
   }
-  getTotalAmount(totalAmount: number, workingDaysInMonth: number[], workingDays: number[]): number[] {
+  public getTotalAmount(totalAmount: number, workingDaysInMonth: number[], workingDays: number[]): number[] {
     let arr = []
     for (let index = 0; index < workingDaysInMonth.length; index++) {
       let val = (totalAmount / workingDaysInMonth[index]) * workingDays[index]
@@ -153,7 +153,7 @@ export class CustomDatepickerHelperService {
     return arr
   }
 
-  getTotal(array: number[]) {
+ public getTotal(array: number[]) {
 
     let result = 0
 
