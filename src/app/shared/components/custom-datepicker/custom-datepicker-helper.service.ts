@@ -160,7 +160,7 @@ export class CustomDatepickerHelperService {
     function helper(helperInput: number[]) {
 
       if (helperInput.length === 0) return;
-
+      if(!helperInput[0])return 
       result += helperInput[0]
 
       helper(helperInput.slice(1))

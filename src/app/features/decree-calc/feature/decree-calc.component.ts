@@ -6,7 +6,6 @@ import { SourceService } from '../data-access/source.service';
 import { CustomDatepickerComponent } from '../../../shared/components/custom-datepicker/custom-datepicker.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TextInputComponent } from '../../../shared/components/input/input.component';
-import { DatepickerComponent } from '../../../shared/components/datepicker/datepicker.component';
 import { createSearch } from '../../../shared/functions/create-search';
 import { getCalendarEndDate } from '../../../shared/functions/dayToDate';
 import { CustomDatepickerHelperService } from '../../../shared/components/custom-datepicker/custom-datepicker-helper.service';
@@ -25,8 +24,7 @@ export type CalcualtionForm = {
   selector: 'app-decree-calc',
   standalone: true,
   imports: [CustomMaterialModule, TableComponent,
-    CustomDatepickerComponent, DatepickerComponent,
-    ReactiveFormsModule, TextInputComponent],
+            CustomDatepickerComponent,ReactiveFormsModule, TextInputComponent],
   templateUrl: './decree-calc.component.html',
   styleUrl: './decree-calc.component.scss'
 })

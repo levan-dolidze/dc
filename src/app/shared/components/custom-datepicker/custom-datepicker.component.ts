@@ -1,7 +1,8 @@
-import { Component, Input, OnInit, forwardRef, inject, input, output } from '@angular/core';
+import { Component, Input, OnInit, forwardRef, inject, output } from '@angular/core';
 import { CustomMaterialModule } from '../../custom-material.module';
 import moment from 'moment';
-import { AbstractControl, ControlValueAccessor, FormArray, FormBuilder, FormControl, FormGroup, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, FormBuilder, FormControl, FormGroup, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { NgOptimizedImage } from '@angular/common';
 
 export type CustomDateForm = {
   date: FormControl<string | Date>
@@ -9,7 +10,7 @@ export type CustomDateForm = {
 @Component({
   selector: 'app-custom-datepicker',
   standalone: true,
-  imports: [CustomMaterialModule,ReactiveFormsModule],
+  imports: [CustomMaterialModule, ReactiveFormsModule,NgOptimizedImage],
   templateUrl: './custom-datepicker.component.html',
   styleUrl: './custom-datepicker.component.scss',
   providers: [
@@ -50,7 +51,7 @@ export class CustomDatepickerComponent implements OnInit, ControlValueAccessor {
 
   })
 
-  
+
 
   ngOnInit(): void {
 
@@ -94,10 +95,5 @@ export class CustomDatepickerComponent implements OnInit, ControlValueAccessor {
   }
   datepickerOpened() {
     this.isOpen = true
-  }
-  private setTodayDate() {
-    const today = new Date();
-    this.dateFormControl.setValue(today);
-    this.changeDate.emit(moment(today).format());
   }
 }
