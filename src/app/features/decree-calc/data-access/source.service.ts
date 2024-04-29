@@ -1,5 +1,14 @@
 import { Injectable, computed, signal } from '@angular/core';
 
+export type DecreeData = {
+  month: string[],
+  avarageSalary: number[],
+  workingDays: number[],
+  workingDaysInMonth: number[],
+  amount: number[],
+  totalAmount: number[],
+  totalworkingDays: number[],
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +19,7 @@ export class SourceService {
   readonly dataVal = computed(this.#source)
 
 
- private data = signal(
+  private data = signal(
     {
       month: [],
       avarageSalary: [0],
@@ -21,12 +30,12 @@ export class SourceService {
       totalworkingDays: [0],
     }
   )
- public getData() {
+  public getData() {
     this.#source.update(this.data)
     return this.dataVal
   }
 
- public updateData(params: any[], key: string) {
+  public updateData(params: any[], key: string) {
     this.#source.update((x) => {
       const { param, ...rest } = x;
       return { ...rest, [key]: params };
