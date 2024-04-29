@@ -1,0 +1,35 @@
+<div class="text-input-cont">
+    <mat-form-field style="width: 100%;"
+    
+      class="mat-field"
+      [class.custom-invalid-input]="isInvalid"
+      (click)="onClick($event)"
+    >
+      <mat-label> {{ placeholder }} </mat-label>
+  
+      <input
+        id="input"
+        matInput
+        mask="maskValue"
+        autocomplete="off"
+        [type]="type || 'text'"
+        [maxlength]="maxlength"
+        [minlength]="minlength"
+        [max]="max"
+        [min]="min"
+        [readonly]="readonly"
+        [disabled]="isDisabled || null"
+        [(ngModel)]="value"
+        (ngModelChange)="updateModel()"
+        (focus)="onFocusChanged(true, $event)"
+        (blur)="onFocusChanged(false, $event)"
+        [errorStateMatcher]="errorMatcher()"
+        [required]="isRequired"
+        #inputEl
+      />
+  
+     
+    </mat-form-field>
+  
+  </div>
+  

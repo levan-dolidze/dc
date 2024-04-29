@@ -1,0 +1,44 @@
+
+
+<form   (ngSubmit)="onSubmit()"[formGroup]="form">
+
+  <div class="calendarDaysManual">
+    <div>
+      <app-input formControlName="calendarDays"
+                 [placeholder]="'კალენდ. დღეები'">
+      </app-input>
+     </div>
+     <div >
+      {{f.calendarDaysDate.value|date}}
+     </div>
+  </div>
+
+  <div class="dates">
+
+    <div>
+      <app-custom-datepicker
+      [placeholder]="'დაწყება'"
+      formControlName="startDate"
+      (changeDate)="onStartChange($event)">
+    </app-custom-datepicker>
+    </div>
+
+    <div>
+      <app-datepicker
+      [placeholder]="'დასრულება'"
+      formControlName="endDate"
+      (changeDate)="onEndChange($event)"
+      ></app-datepicker>
+    </div>
+  </div>
+
+  <div class="amount">
+    <app-input formControlName="amount"
+    [placeholder]="'თანხა'"
+    ></app-input>
+   </div>
+</form>
+
+<div class="declree-calc-cont">
+    <app-table [displayedColumns]="displayedColumns"></app-table>
+</div>

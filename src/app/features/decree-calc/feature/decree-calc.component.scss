@@ -1,0 +1,25 @@
+.declree-calc-cont {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: 70%;
+    margin: 0 auto;
+
+    .amount {
+        width: 100%;
+    }
+
+    .calendarDaysManual,.dates {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        div {
+            width: 50%;
+            gap: 10px
+            
+        }
+    }
+}

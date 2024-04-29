@@ -1,0 +1,20 @@
+table th,
+td {
+    border: 1px solid#cccccc;
+    text-align: center;
+
+}
+
+table {
+    .head {
+        background-color: rgb(210, 188, 231);
+        padding: 8px;
+
+    }
+
+    tbody {
+        text-align: center;
+        display: grid;
+        padding: 5px;
+    }
+}

@@ -1,0 +1,24 @@
+<table>
+    <thead>
+        <tr>
+            <th *ngFor="let culomn of displayedColumns; let i = index">
+                <div class="head">
+                    {{culomn.title}}
+                </div>
+    <tbody>
+        <tr *ngFor="let td of culomn.getData">
+            @if( (td|typeChecker)){
+            {{td|number}}
+            }
+            @else {
+            {{td}}
+            }
+        </tr>
+    </tbody>
+    </th>
+    </tr>
+    </thead>
+
+    <tfoot>
+    </tfoot>
+</table>
