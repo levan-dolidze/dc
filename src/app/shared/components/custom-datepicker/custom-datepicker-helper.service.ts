@@ -37,7 +37,7 @@ export class CustomDatepickerHelperService {
     {
       month: 4,
       restDay: 3,
-      dates: [new Date('05/09/2024'), new Date('05/26/2024'), new Date('05/12/2024')]
+      dates: [new Date('05/06/2024'), new Date('05/03/2024'), new Date('05/26/2024')]
     },
     {
       month: 5,
