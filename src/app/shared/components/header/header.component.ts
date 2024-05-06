@@ -9,7 +9,7 @@ import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
   <div class="header-cont">
 
 
-<div tiptxt="home" [routerLink]="['/home']">მთავარი</div>
+<!-- <div tiptxt="home" [routerLink]="['/home']">მთავარი</div> -->
 <div tiptxt="employees" [routerLink]="['/decree-calc']" routerLinkActive="active">დეკრეტულის გამოთვლა</div>
 
 
