@@ -13,9 +13,8 @@ export class CustomDatepickerHelperService {
   restDays = [
     {
       month: 0,
-      restDay: 2,
-      dates: [new Date('01/01/2024'), new Date('01/02/2024'),
-      new Date('01/07/2024'), new Date('01/19/2024')
+      restDay: 3,
+      dates: [new Date('01/01/2024'), new Date('01/02/2024'), new Date('01/19/2024')
       ]
     },
     {
@@ -153,14 +152,14 @@ export class CustomDatepickerHelperService {
     return arr
   }
 
- public getTotal(array: number[]) {
+  public getTotal(array: number[]) {
 
     let result = 0
 
     function helper(helperInput: number[]) {
 
       if (helperInput.length === 0) return;
-      if(!helperInput[0])return 
+      if (!helperInput[0]) return
       result += helperInput[0]
 
       helper(helperInput.slice(1))
