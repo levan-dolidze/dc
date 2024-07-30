@@ -24,7 +24,7 @@ export type CalcualtionForm = {
   selector: 'app-decree-calc',
   standalone: true,
   imports: [CustomMaterialModule, TableComponent,
-            CustomDatepickerComponent,ReactiveFormsModule, TextInputComponent],
+    CustomDatepickerComponent, ReactiveFormsModule, TextInputComponent],
   templateUrl: './decree-calc.component.html',
   styleUrl: './decree-calc.component.scss'
 })
@@ -36,13 +36,7 @@ export class DecreeCalcComponent implements OnInit {
     });
   }
 
-  form = new FormGroup<CalcualtionForm>({
-    startDate: new FormControl(),
-    endDate: new FormControl(null),
-    calendarDays: new FormControl(null),
-    calendarDaysDate: new FormControl(null),
-    amount: new FormControl(null)
-  })
+
 
   displayedColumns!: TableColumnConfig[];
 
@@ -51,7 +45,6 @@ export class DecreeCalcComponent implements OnInit {
   ui = this.sourseService.dataVal;
 
 
-  // calendarDaysDate$ = createSearch(this.f.calendarDays);
   startDate$ = createSearch(this.f.startDate);
   endDate$ = createSearch(this.f.endDate);
   amount$ = createSearch(this.f.amount);
@@ -59,14 +52,6 @@ export class DecreeCalcComponent implements OnInit {
   ngOnInit(): void {
     this.sourseService.getData()
     this.getData()
-
-    // this.calendarDaysDate$.subscribe((calendarDaysDate) => {
-    //   if (calendarDaysDate) {
-    //     // let end = getCalendarEndDate(+calendarDaysDate)
-    //     // console.log(end)
-    //     // this.f.calendarDaysDate.setValue(end)
-    //   }
-    // });
 
     this.startDate$.subscribe((startDate) => {
       if (startDate) {
@@ -112,6 +97,16 @@ export class DecreeCalcComponent implements OnInit {
 
     })
   }
+
+
+  form = new FormGroup<CalcualtionForm>({
+    startDate: new FormControl(),
+    endDate: new FormControl(null),
+    calendarDays: new FormControl(null),
+    calendarDaysDate: new FormControl(null),
+    amount: new FormControl(null)
+  })
+
 
   get f(): CalcualtionForm {
     return this.form.controls
@@ -162,12 +157,6 @@ export class DecreeCalcComponent implements OnInit {
 
 
 
-
-
-
-
-
-
   onStartChange(e: Date) {
     this.f['startDate'].setValue(e)
   }
@@ -176,7 +165,4 @@ export class DecreeCalcComponent implements OnInit {
     this.f['endDate'].setValue(e)
   }
 
-  onSubmit() {
-    console.log(this.form.getRawValue())
-  }
 }
